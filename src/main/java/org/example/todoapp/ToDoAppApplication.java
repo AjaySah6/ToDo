@@ -11,3 +11,6 @@ public class ToDoAppApplication {
 	}
 
 }
+
+
+// Database file is stored at - C:\Users\<YourUsername>\todo-db.mv.db
