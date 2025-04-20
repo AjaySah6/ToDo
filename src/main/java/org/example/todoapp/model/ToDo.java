@@ -1,9 +1,11 @@
 package org.example.todoapp.model;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+@Entity
 public class ToDo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // // Use database's identity column (e.g., AUTO_INCREMENT)
