@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping("/todo")
@@ -73,8 +74,18 @@ public class ToDoController {
             return ResponseEntity.notFound().build(); // ❌ 404 Not Found
         }
     }
+    @GetMapping("/getall")
+    public ResponseEntity<List<ToDo>> getAllToDo() {
+        List<ToDo> toDo = toDoService.getAllToDo();
+        try{
+            return ResponseEntity.ok(toDo); // ✅
+        } catch (Exception e){
+            return ResponseEntity.notFound().build(); //❌
+        }
+    }
 
 }
+
 
 
 /*
