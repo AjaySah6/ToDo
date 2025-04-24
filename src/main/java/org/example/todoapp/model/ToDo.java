@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "todo")
+// @Table(name = "todo")
 @Data                   // @Getter, @Setter, @ToString, @EqualsAndHashCode, @RequiredArgsConstructor,toString(), equals(), hashCode()
 @NoArgsConstructor      // Generates a constructor with no parameters.
 @AllArgsConstructor     // Generates a constructor with one parameter for each field in the class.
