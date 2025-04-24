@@ -1,18 +1,29 @@
 package org.example.todoapp.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Table(name = "todo")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+
 public class ToDo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // // Use database's identity column (e.g., AUTO_INCREMENT)
     private long id;
+
+    @Column(nullable = false, length = 100)
     private String title;
+
+    @Column(nullable = false, length = 100)
     private String description;
-    private boolean completed; // Indicates whether the todo is marked as completed by user
+
+    @Column(nullable = false)
+    private boolean completed = false; // Default value at entity level
 
 
     // Getters and Setters

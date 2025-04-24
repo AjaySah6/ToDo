@@ -27,7 +27,7 @@ public class ToDoController {
     // and for control ove status codes
 
 
-    @PostMapping("/create")
+    @PostMapping("/create") //http://localhost:8080/todo/create
     public ResponseEntity<ToDo> createToDo(@RequestBody ToDo toDo) {
         // Basic validation example (you'd typically use validation annotations)
         if (toDo.getTitle() == null || toDo.getTitle().isBlank()) {
@@ -78,7 +78,7 @@ public class ToDoController {
             return ResponseEntity.notFound().build(); // ❌ 404 Not Found
         }
     }
-    @GetMapping("/getall")
+    @GetMapping("/getall") //http://localhost:8080/todo/getall
     public ResponseEntity<List<ToDo>> getAllToDo() {
         List<ToDo> toDo = toDoService.getAllToDo();
         try{
